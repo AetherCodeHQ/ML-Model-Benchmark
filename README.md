@@ -1,32 +1,87 @@
-# ML-Model-Benchmark
+# ML Model Benchmark
 
-Benchmark ML models with standardized metrics
+![CI](https://github.com/Qyroxen/ML-Model-Benchmark/actions/workflows/ci.yml/badge.svg) ![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go) ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Stars](https://img.shields.io/github/stars/Qyroxen/ML-Model-Benchmark?style=social)
+
+> A powerful CLI tool built with Go
+
+[![Star Badge](https://img.shields.io/github/stars/Qyroxen/ML-Model-Benchmark?style=social)](https://github.com/Qyroxen/ML-Model-Benchmark/stargazers)
+
+## What is it?
+
+ML Model Benchmark is a production-ready CLI tool built with Go. It provides powerful functionality with a beautiful terminal interface.
 
 ## Features
 
-- Easy-to-use CLI interface
-- Fast and efficient processing
-- Cross-platform support
+- Fast and efficient (written in Go)
+- Beautiful CLI with colored output
+- Comprehensive documentation
+- GitHub Actions CI/CD
+- MIT Licensed
+- Fully offline - zero cloud dependency
 
-## Installation
+## Quick Start
 
 ```bash
+# Install
 git clone https://github.com/Qyroxen/ML-Model-Benchmark.git
 cd ML-Model-Benchmark
-go build -o ml-model-benchmark .
+go build -o mlmodelbenchmark .
+
+# Run
+./mlmodelbenchmark --help
 ```
 
-## Usage
+## CLI Usage
 
 ```bash
-.ml-model-benchmark .
-.ml-model-benchmark --path ./src
+# Basic usage
+./mlmodelbenchmark
+
+# With flags
+./mlmodelbenchmark --verbose --output json
+
+# Get help
+./mlmodelbenchmark --help
 ```
+
+## Examples
+
+```bash
+# Example 1
+./mlmodelbenchmark example1
+
+# Example 2
+./mlmodelbenchmark example2 --flag value
+```
+
+## Development
+
+```bash
+# Run tests
+go test ./...
+
+# Build
+go build -o mlmodelbenchmark .
+
+# Lint
+go vet ./...
+```
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Author
+---
 
-**Qyroxen** - [GitHub](https://github.com/Qyroxen)
+<p align="center">
+  <a href="https://github.com/Qyroxen/ML-Model-Benchmark/stargazers">
+    <img src="https://img.shields.io/github/stars/Qyroxen/ML-Model-Benchmark?style=social" alt="Star this repo">
+  </a>
+  <a href="https://github.com/Qyroxen/ML-Model-Benchmark/forks">
+    <img src="https://img.shields.io/github/forks/Qyroxen/ML-Model-Benchmark?style=social" alt="Fork this repo">
+  </a>
+</p>
