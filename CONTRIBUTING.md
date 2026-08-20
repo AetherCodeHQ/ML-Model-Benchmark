@@ -6,7 +6,7 @@ Thank you for your interest in contributing! 🎉
 
 ### 1. Fork the Repository
 ```bash
-git clone https://github.com/Qyroxen/ML-Model-Benchmark.git
+git clone https://github.com/AetherCodeHQ/ML-Model-Benchmark.git
 cd ML-Model-Benchmark
 ```
 
