@@ -1,159 +1,88 @@
-# 🤖 Ml Model Benchmark
+# 🤖 ML Model Benchmark
 
-![Go](https://img.shields.io/badge/Go-1.21%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-00ADD8?style=for-the-badge)
-![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![CodeQL](https://img.shields.io/badge/CodeQL-Security-00ADD8?style=for-the-badge)
-![Lint](https://img.shields.io/badge/GolangCI--Lint-Passing-00ADD8?style=for-the-badge)
-![Dependabot](https://img.shields.io/badge/Dependabot-Enabled-025E9C?style=for-the-badge&logo=dependabot&logoColor=white)
+![Go](https://img.shields.io/badge/Go-1.21%2B-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Version](https://img.shields.io/badge/Version-v2.0.0-00ADD8?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![PRs](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)
 
-> ML-Model-Benchmark - Open source tool by AetherCodeHQ
+> AI/ML tool by [AetherCodeHQ](https://github.com/AetherCodeHQ)
 
-`ai` `benchmarking` `cli` `golang` `machine-learning`
+`ai` `machine-learning` `cli` `golang`
 
-## What is it?
+---
 
-**Ml Model Benchmark** is a ai/ml tool designed for developers who need fast, reliable, and offline-capable tools. Built with Go for maximum performance and minimal resource usage.
+## What is ML-Model-Benchmark?
 
-## Why should you care?
+**ML-Model-Benchmark** is an AI-powered analysis tool that scans and processes code using pattern recognition.
 
-- 🚀 **Fast** — Compiled Go binary, no runtime dependencies
-- 🔒 **Secure** — CodeQL security analysis + Dependabot
-- 🌐 **Offline-first** — Works without internet connection
-- 📦 **Lightweight** — Single binary, minimal footprint
-- 🛠️ **Developer-friendly** — Clean CLI with helpful documentation
+## Features
 
-## Quick Start
+- ✅ Network operations
+- 🚀 **Zero dependencies** — only Go standard library
+- 📦 **Single binary** — compile and run anywhere
+- 🔄 **Offline capable** — no internet required
 
-### Prerequisites
-- Go 1.21 or higher
+## Installation
 
-### Install from source
 ```bash
+# Clone
 git clone https://github.com/AetherCodeHQ/ML-Model-Benchmark.git
 cd ML-Model-Benchmark
-go build -o ML-Model-Benchmark .
+
+# Build
+go build -o ml-model-benchmark .
+
+# Run
+./ml-model-benchmark [file]
 ```
 
-### Run
+### Or directly with `go run`:
 ```bash
-./ML-Model-Benchmark --help
+go run main.go [file]
 ```
 
 ## Usage
 
 ```bash
 # Basic usage
-./ML-Model-Benchmark --path ./target
-
-# With options
-./ML-Model-Benchmark --path ./target --format json --output report.json
-
-# Verbose mode
-./ML-Model-Benchmark --path ./target --verbose
+./ml-model-benchmark [file]
 ```
 
-## Features
+### Example Output
 
-- ✅ High-performance Go implementation
-- ✅ Cross-platform support (Windows, Linux, macOS)
-- ✅ JSON export for CI/CD integration
-- ✅ Colored terminal output
-- ✅ Configurable via YAML/JSON
-- ✅ Comprehensive documentation
-
-## CLI Flags
-
-| Flag | Description | Default |
-|------|-------------|---------|
-| `--path` | Target directory | `.` |
-| `--format` | Output format (json, text, badge) | `text` |
-| `--output` | Output filename | `stdout` |
-| `--verbose` | Enable verbose output | `false` |
-| `--config` | Config file path | - |
-
-## Examples
-
-### Basic scan
-```bash
-./ML-Model-Benchmark --path ./my-project
+```
+$ ./ml-model-benchmark [file]
+ML Model Benchmark
+==================
+  %-22s %-8s %-10s %-10s Score\n
 ```
 
-### JSON report
-```bash
-./ML-Model-Benchmark --path ./my-project --format json --output report.json
+## Project Structure
+
 ```
-
-### CI/CD integration
-```yaml
-# .github/workflows/scan.yml
-- name: Run Ml Model Benchmark
-  run: ./ML-Model-Benchmark --path . --format json --output report.json
-```
-
-## Development
-
-```bash
-# Clone the repo
-git clone https://github.com/AetherCodeHQ/ML-Model-Benchmark.git
-cd ML-Model-Benchmark
-
-# Build
-go build -o ML-Model-Benchmark .
-
-# Run tests
-go test ./...
-
-# Lint
-golangci-lint run
+ML-Model-Benchmark/
+  main.go          # Entry point (30 lines)
+  go.mod            # Go module definition
+  go.sum            # Dependency checksums
+  README.md         # This file
+  LICENSE           # MIT License
+  CHANGELOG.md      # Version history
 ```
 
 ## Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-## Security
-
-If you discover a security vulnerability, please report it responsibly. See [SECURITY.md](SECURITY.md) for details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/AetherCodeHQ">AetherCode</a> • <a href="https://github.com/AetherCode-Core">AetherCode-Core</a>
-</p>
-
-
----
-
-## What's New in v1.1.0
-
-- Professional documentation with badges
-- CI/CD pipeline with GitHub Actions
-- Security analysis with CodeQL
-- Dependency management with Dependabot
-- Code quality with GolangCI-Lint
-- Issue and PR templates
-- Contributing guidelines
-
-## Categories
-
-| Category | Description |
-|----------|-------------|
-| AI & Machine Learning | This project is part of the AetherCode ecosystem |
-
-## Related Projects
-
-Part of [AetherCode Core](https://github.com/AetherCode-Core) ecosystem.
-
-![Version](https://img.shields.io/badge/Version-v2.0.0-00ADD8?style=for-the-badge)
-
-
-## What's new in v2.0.0
-
-- Clean CLI with subcommands
-- Robust error handling
-- Fast, standard-library-only implementation
+Built with ❤️ by [AetherCodeHQ](https://github.com/AetherCodeHQ)
