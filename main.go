@@ -1,49 +1,30 @@
-
 package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"os"
-	"path/filepath"
-	"strings"
+	"math"
+	"math/rand"
+	"time"
 )
 
 func main() {
-	dir := "."
-	if len(os.Args) > 1 {
-		dir = os.Args[1]
+	rand.Seed(time.Now().UnixNano())
+	models := []struct {
+		Name     string
+		Accuracy float64
+		Latency  float64
+		Memory   float64
+	}{
+		{"logistic-regression", 0.82, 1.2, 128},
+		{"random-forest", 0.89, 5.4, 512},
+		{"neural-network", 0.91, 12.8, 2048},
+		{"gradient-boosting", 0.90, 3.1, 768},
 	}
-	files := 0
-	lines := 0
-	var sizes []int64
-	filepath.Walk(dir, func(p string, info os.FileInfo, err error) error {
-		if err != nil || info.IsDir() {
-			return nil
-		}
-		if strings.HasPrefix(info.Name(), ".") {
-			return nil
-		}
-		files++
-		lines += countLines(p)
-		sizes = append(sizes, info.Size())
-		return nil
-	})
-	fmt.Printf("files=%d lines=%d size=%d\n", files, lines, sum(sizes))
-}
-
-func countLines(p string) int {
-	b, err := ioutil.ReadFile(p)
-	if err != nil {
-		return 0
+	fmt.Println("ML Model Benchmark")
+	fmt.Println("==================")
+	fmt.Printf("  %-22s %-8s %-10s %-10s Score\n", "Model", "Acc", "Latency", "Memory")
+	for _, m := range models {
+		score := m.Accuracy * 100 / (1 + math.Log(m.Latency+1)) * (1024 / m.Memory)
+		fmt.Printf("  %-22s %.1f%%  %.1fms   %.0fMB   %.2f\n", m.Name, m.Accuracy*100, m.Latency, m.Memory, score)
 	}
-	return strings.Count(string(b), "\n") + 1
-}
-
-func sum(xs []int64) int64 {
-	var s int64
-	for _, x := range xs {
-		s += x
-	}
-	return s
 }
